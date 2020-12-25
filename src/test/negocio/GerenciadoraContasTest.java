@@ -9,13 +9,18 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GerenciadoraContasTest {
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
+
+@TestMethodOrder(OrderAnnotation.class)
+public class GerenciadoraContasTest {
 
     private GerenciadoraContas gerContas;
     private ContaCorrente conta1;
     private ContaCorrente conta2;
 
     @BeforeEach
+    @Order(1)
     public void init(){
         //Arrange
         conta1 = new ContaCorrente(1, 200, true);
@@ -29,6 +34,7 @@ class GerenciadoraContasTest {
     }
 
     @Test
+    @Order(2)
     @DisplayName("teste transferir valor - (adicionando de uma e removendo de outra) conta, saldo suficiente")
     @Tag("testNegocio")
     public void testTransfereValor(){
@@ -44,6 +50,7 @@ class GerenciadoraContasTest {
     }
 
     @Test
+    @Order(3)
     @DisplayName("teste transferir valor - (adicionando de uma e removendo de outra) conta, saldo insuficiente")
     @Tag("testNegocio")
     public void testTransfereValor_saldoInsuficiente(){
@@ -57,5 +64,11 @@ class GerenciadoraContasTest {
         Assertions.assertFalse(success);
         Assertions.assertEquals(200, conta1.getSaldo());
         Assertions.assertEquals(0, conta2.getSaldo());
+    }
+
+    @AfterEach
+    @Order(4)
+    public void tearDown() {
+		System.out.println("Teste executado!");
     }
 }

@@ -14,8 +14,8 @@ public class GerenciadoraClientesTest {
     }
 
     @Test
-    @DisplayName("Verifica se a função pesquisa cliente está trazendo o cliente correto com base no ID")
-    @Tag("testGerenciadoraClientes")
+    @DisplayName("Teste pesquisa cliente com base no seu ID")
+    @Tag("testNegocio")
     public void testPesquisaCliente(){
 
         //Arrange
@@ -36,8 +36,8 @@ public class GerenciadoraClientesTest {
     }
 
     @Test
-    @DisplayName("Verifica se a função remove cliente está removendo e removendo o cliente correto")
-    @Tag("testGerenciadoraClientes")
+    @DisplayName("teste remove cliente")
+    @Tag("testNegocio")
     public void removeCliente(){
         //Arrange
         Cliente c1 = new Cliente (1, "João Pedro", 17, "joao@neo", 1, true);

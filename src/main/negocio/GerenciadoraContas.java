@@ -101,7 +101,7 @@ public class GerenciadoraContas {
 		ContaCorrente contaOrigem = pesquisaConta(idContaOrigem);
 		ContaCorrente contaDestino = pesquisaConta(idContaDestino);
 		
-		if(contaOrigem.getSaldo() >= valor)
+		if(contaOrigem.getSaldo() >= valor && valor > 0)
 		{
 			contaDestino.setSaldo(contaDestino.getSaldo() + valor);
 			contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);

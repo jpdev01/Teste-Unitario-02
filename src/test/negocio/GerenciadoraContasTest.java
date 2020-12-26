@@ -65,8 +65,27 @@ public class GerenciadoraContasTest {
         Assertions.assertEquals(expectedSaldoCliente2, conta2.getSaldo());
     }
 
-    @AfterEach
+    @Test
     @Order(4)
+    @DisplayName("teste transferir valor - Valor nulo")
+    @Tag("testNegocio")
+    public void testTransfereValor_valorZero(){
+
+        //Arrange
+        double expectedSaldoCliente1 = 200;
+        double expectedSaldoCliente2 = 0;
+
+        //Act
+        boolean success = gerContas.transfereValor(1, 0, 2);
+
+        //Assert
+        Assertions.assertFalse(success);
+        Assertions.assertEquals(expectedSaldoCliente1, conta1.getSaldo());
+        Assertions.assertEquals(expectedSaldoCliente2, conta2.getSaldo());
+    }
+
+    @AfterEach
+    @Order(5)
     public void tearDown() {
 		System.out.println("Teste executado!");
     }

@@ -7,6 +7,8 @@ import org.junit.jupiter.api.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 // OBS: USO DE DADOS FAKES PARA TESTE
 public class GerenciadoraClientesTest {
 
@@ -110,7 +112,7 @@ public class GerenciadoraClientesTest {
     @Tag("testNegocio")
     public void testValidaIdadeInvalida() throws IdadeNaoPermitidaException{
         //Arrange
-        Cliente cliente = new Cliente(3, "Joao", 18, "jptruchinski@gmail.com", 1, true);
+        Cliente cliente = new Cliente(3, "Joao", 17, "jptruchinski@gmail.com", 1, true);
         Cliente cliente2 = new Cliente(4, "Jose", 66, "jptruchinski@gmail.com", 1, true);
         String expectedException = IdadeNaoPermitidaException.MSG_IDADE_INVALIDA;
 
@@ -118,7 +120,7 @@ public class GerenciadoraClientesTest {
         try{
             gerClientes.validaIdade(cliente.getIdade());
             gerClientes.validaIdade(cliente.getIdade());
-            Assertions.assertTrue(false);
+            fail("ERRO: Idade válida!");
         }catch (Exception e){
             //Assert
             Assertions.assertEquals(expectedException, e.getMessage());

@@ -1,16 +1,11 @@
 package test.negocio;
-
 import main.negocio.ContaCorrente;
 import main.negocio.GerenciadoraContas;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.jupiter.api.Order;
 
 @TestMethodOrder(OrderAnnotation.class)
 public class GerenciadoraContasTest {
@@ -40,13 +35,15 @@ public class GerenciadoraContasTest {
     public void testTransfereValor(){
 
         //Arrange
+        double expectedSaldoCliente1 = 100;
+        double expectedSaldoCliente2 = 100;
 
         //Act
         gerContas.transfereValor(1, 100, 2);
 
         //Assert
-        Assertions.assertEquals(100, conta1.getSaldo());
-        Assertions.assertEquals(100, conta2.getSaldo());
+        Assertions.assertEquals(expectedSaldoCliente1, conta1.getSaldo());
+        Assertions.assertEquals(expectedSaldoCliente2, conta2.getSaldo());
     }
 
     @Test
@@ -56,14 +53,16 @@ public class GerenciadoraContasTest {
     public void testTransfereValor_saldoInsuficiente(){
 
         //Arrange
+        double expectedSaldoCliente1 = 200;
+        double expectedSaldoCliente2 = 0;
 
         //Act
         boolean success = gerContas.transfereValor(1, 250, 2);
 
         //Assert
         Assertions.assertFalse(success);
-        Assertions.assertEquals(200, conta1.getSaldo());
-        Assertions.assertEquals(0, conta2.getSaldo());
+        Assertions.assertEquals(expectedSaldoCliente1, conta1.getSaldo());
+        Assertions.assertEquals(expectedSaldoCliente2, conta2.getSaldo());
     }
 
     @AfterEach

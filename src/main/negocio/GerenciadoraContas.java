@@ -27,11 +27,14 @@ public class GerenciadoraContas {
 	 * @param idConta id da conta a ser pesquisada
 	 * @return a conta pesquisada ou null, caso n�o seja encontrada
 	 */
-	public ContaCorrente pesquisaConta (int idConta) {
-
-		for (ContaCorrente contaCorrente : contasDoBanco) {
+	public ContaCorrente pesquisaConta (int idConta)
+	{
+		for (ContaCorrente contaCorrente : contasDoBanco)
+		{
 			if(contaCorrente.getId() == idConta)
+			{
 				return contaCorrente;
+			}
 		}
 		return null;
 	}
@@ -40,7 +43,8 @@ public class GerenciadoraContas {
 	 * Adiciona uma nova conta � lista de contas do banco.
 	 * @param novaConta nova conta a ser adicionada
 	 */
-	public void adicionaConta (ContaCorrente novaConta) {
+	public void adicionaConta (ContaCorrente novaConta)
+	{
 		this.contasDoBanco.add(novaConta);
 	}
 
@@ -49,7 +53,8 @@ public class GerenciadoraContas {
 	 * @param idConta ID da conta a ser removida 
 	 * @return true se a conta foi removida. False, caso contr�rio.
 	 */
-	public boolean removeConta (int idConta) {
+	public boolean removeConta (int idConta)
+	{
 		
 		boolean contaRemovida = false;
 		
@@ -69,7 +74,8 @@ public class GerenciadoraContas {
 	 * @param idConta ID da conta cujo status ser� verificado
 	 * @return true se a conta est� ativa. False, caso contr�rio. 
 	 */
-	public boolean contaAtiva (int idConta) {
+	public boolean contaAtiva (int idConta)
+	{
 		
 		boolean contaAtiva = false;
 		
@@ -94,7 +100,8 @@ public class GerenciadoraContas {
 	 * @param idContaDestino conta que ter� o valor acrescido
 	 * @return true, se a transfer�ncia foi realizada com sucesso.
 	 */
-	public boolean transfereValor (int idContaOrigem, double valor, int idContaDestino) {
+	public boolean transfereValor (int idContaOrigem, double valor, int idContaDestino)
+	{
 		
 		boolean sucesso = false;
 		

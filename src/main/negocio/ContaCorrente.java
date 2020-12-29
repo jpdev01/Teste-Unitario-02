@@ -13,7 +13,8 @@ public class ContaCorrente {
 	
 	private boolean ativa;
 
-	public ContaCorrente(int id, double saldo, boolean ativa) {
+	public ContaCorrente(int id, double saldo, boolean ativa)
+	{
 		this.id = id;
 		this.saldo = saldo;
 		this.ativa = ativa;
@@ -38,7 +39,8 @@ public class ContaCorrente {
 	 * M�todo que retorna o saldo da conta corrente. 
 	 * @return saldo da conta corrente
 	 */
-	public double getSaldo() {
+	public double getSaldo()
+	{
 		return saldo;
 	}
 

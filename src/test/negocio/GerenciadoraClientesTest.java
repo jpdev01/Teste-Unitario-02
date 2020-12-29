@@ -117,11 +117,14 @@ public class GerenciadoraClientesTest {
         String expectedException = IdadeNaoPermitidaException.MSG_IDADE_INVALIDA;
 
         //Act
-        try{
+        try
+        {
             gerClientes.validaIdade(cliente.getIdade());
             gerClientes.validaIdade(cliente.getIdade());
             fail("ERRO: Idade válida!");
-        }catch (Exception e){
+        }
+        catch (Exception e)
+        {
             //Assert
             Assertions.assertEquals(expectedException, e.getMessage());
         }
@@ -129,7 +132,8 @@ public class GerenciadoraClientesTest {
     }
 
     @AfterEach
-    public void tearDown() {
+    public void tearDown()
+    {
         gerClientes.removeAll();
     }
 }

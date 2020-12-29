@@ -16,7 +16,8 @@ public class GerenciadoraContasTest {
 
     @BeforeEach
     @Order(1)
-    public void init(){
+    public void init()
+    {
         //Arrange
         conta1 = new ContaCorrente(1, 200, true);
         conta2 = new ContaCorrente(2, 0, true);
@@ -32,7 +33,8 @@ public class GerenciadoraContasTest {
     @Order(2)
     @DisplayName("teste transferir valor - (adicionando de uma e removendo de outra) conta, saldo suficiente")
     @Tag("testNegocio")
-    public void testTransfereValor(){
+    public void testTransfereValor()
+    {
 
         //Arrange
         double expectedSaldoCliente1 = 100;
@@ -50,7 +52,8 @@ public class GerenciadoraContasTest {
     @Order(3)
     @DisplayName("teste transferir valor - (adicionando de uma e removendo de outra) conta, saldo insuficiente")
     @Tag("testNegocio")
-    public void testTransfereValor_saldoInsuficiente(){
+    public void testTransfereValor_saldoInsuficiente()
+    {
 
         //Arrange
         double expectedSaldoCliente1 = 200;
@@ -69,7 +72,8 @@ public class GerenciadoraContasTest {
     @Order(4)
     @DisplayName("teste transferir valor - Valor nulo")
     @Tag("testNegocio")
-    public void testTransfereValor_valorZero(){
+    public void testTransfereValor_valorZero()
+    {
 
         //Arrange
         double expectedSaldoCliente1 = 200;

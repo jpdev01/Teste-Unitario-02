@@ -18,7 +18,8 @@ public class Cliente {
 	
 	private int idContaCorrente;
 
-	public Cliente(int id, String nome, int idade, String email, int idContaCorrente, boolean ativo) {
+	public Cliente(int id, String nome, int idade, String email, int idContaCorrente, boolean ativo)
+	{
 		this.id = id;
 		this.nome = nome;
 		this.idade = idade;
@@ -122,7 +123,8 @@ public class Cliente {
 	 * @return representa��o textual de um cliente
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		
 		String str ="=========================" 
 					+"Id: " + this.id + "\n"

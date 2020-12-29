@@ -49,12 +49,15 @@ public class GerenciadoraClientes {
 	 * @param idCliente ID do cliente a ser removido 
 	 * @return true se o cliente foi removido. False, caso contr�rio.
 	 */
-	public boolean removeCliente (int idCliente) {
+	public boolean removeCliente (int idCliente)
+	{
 		boolean clienteRemovido = false;
 		
-		for (int i = 0; i < clientesDoBanco.size(); i++) {
+		for (int i = 0; i < clientesDoBanco.size(); i++)
+		{
 			Cliente cliente = clientesDoBanco.get(i);
-			if(cliente.getId() == idCliente){
+			if(cliente.getId() == idCliente)
+			{
 				clientesDoBanco.remove(i);
 				clienteRemovido = true;
 				break;
@@ -72,13 +75,17 @@ public class GerenciadoraClientes {
 	public boolean clienteAtivo (int idCliente) {
 		boolean clienteAtivo = false;
 		
-		for (int i = 0; i < clientesDoBanco.size(); i++) {
+		for (int i = 0; i < clientesDoBanco.size(); i++)
+		{
 			Cliente cliente = clientesDoBanco.get(i);
 			if(cliente.getId() == idCliente)
-				if(cliente.isAtivo()){
+			{
+				if(cliente.isAtivo())
+				{
 					clienteAtivo = true;
 					break;
 				}
+			}
 		}
 		
 		return clienteAtivo;

@@ -22,7 +22,8 @@ public class Main {
 			
 			int opcao = sc.nextInt();
 			
-			switch (opcao) {
+			switch (opcao)
+			{
 			// Consultar por um cliente
 			case 1:
 				System.out.print("Digite o ID do cliente: ");
@@ -113,7 +114,8 @@ public class Main {
 	/**
 	 * Imprime menu de op��es do nosso sistema banc�rio
 	 */
-	private static void printMenu() {
+	private static void printMenu()
+	{
 		
 		System.out.println("O que voc� deseja fazer? \n");
 		System.out.println("1) Consultar por um cliente");
@@ -129,7 +131,8 @@ public class Main {
 	 * M�todo que cria e insere algumas contas e clientes no sistema do banco,
 	 * apenas para realiza��o de testes manuais atrav�s do m�todo main acima.
 	 */
-	private static void inicializaSistemaBancario() {
+	private static void inicializaSistemaBancario()
+	{
 		// criando lista vazia de contas e clientes
 		List<ContaCorrente> contasDoBanco = new ArrayList<>();
 		List<Cliente> clientesDoBanco = new ArrayList<>();

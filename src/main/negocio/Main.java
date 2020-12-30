@@ -111,9 +111,7 @@ public class Main {
 		System.out.println("\n");
 	}
 
-	/**
-	 * Imprime menu de op��es do nosso sistema banc�rio
-	 */
+
 	private static void printMenu()
 	{
 		
@@ -127,10 +125,6 @@ public class Main {
 		
 	}
 
-	/**
-	 * M�todo que cria e insere algumas contas e clientes no sistema do banco,
-	 * apenas para realiza��o de testes manuais atrav�s do m�todo main acima.
-	 */
 	private static void inicializaSistemaBancario()
 	{
 		// criando lista vazia de contas e clientes
